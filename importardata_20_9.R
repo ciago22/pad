@@ -35,7 +35,8 @@ DATA <- read_excel("LA MOLINA 2014 POTATO WUE (FB).xlsx",
                                             sheet = "fb")
 View(DATA)
 
-URL <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFzVBWwg3mFlRyKPs/edit?gid=172957346#gid=172957346"
+URL <- "https://docs.google.com/spreadsheets/d/15r7ZwcZZHbEgltlF6gSFvCTFA-CFz
+VBWwg3mFlRyKPs/edit?gid=172957346#gid=172957346"
 library(googlesheets4)
 GS <- as_sheets_id(URL)
 GS
