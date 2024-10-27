@@ -1,5 +1,5 @@
 ---
-title: "Mi-primera-página-web"
+title: "Mi página web Cía"
 author: "Goicochea"
 format: html
 editor: visual
@@ -10,23 +10,24 @@ embed-resources: true
 output-file: index
 ---
 
-## Quarto
+# Mi primera página web, pasos:
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+Tener mi proyecto.
 
-## Running Code
+Conectar mi proyecto a GitHub.
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Tener un archivo en formato html llamado `index.html` .
 
-```{r}
-1 + 1
-```
+Hacer push al repositorio.
 
-You can add options to executable code like this
+Activar GitHub pages.
 
-```{r}
-#| echo: false
-2 * 2
-```
+## Codigo para el paso N°4:
 
-The `echo: false` option disables the printing of code (only output is displayed).
+En terminal
+
+git add .
+
+git commit -m "mi pagina web"
+
+git push
