@@ -75,7 +75,7 @@ str(DATA)
 
 ```
 
-## Modelo lineal
+## Modelo lineal Var. lfa
 
 ```{r}
 modelo <- aov(formula = lfa ~ bloque + riego + geno + riego*geno, data= DATA)
@@ -94,4 +94,51 @@ ggplot(DATA, aes(x = geno, y = lfa, colour = riego)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+```
+
+## Modelo lineal Var. hi
+
+```{r}
+modelo2 <- aov(formula = hi ~ bloque + riego + geno + riego*geno, data= DATA)
+
+anova(modelo2)
+plot(modelo2)
+```
+
+### Boxplot
+
+```{r}
+ggplot(DATA, aes(x = geno, y = hi, colour = riego)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16, outlier.size = 3) +
+  labs(title = "Boxplot por Nivel de Riego y Genotipo", x = "Combinación Riego-Genotipo", y = "Area foliar (cm^2)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Modelo lineal Var. twue
+
+```{r}
+modelo3 <- aov(formula = twue ~ bloque + riego + geno + riego*geno, data= DATA)  
+anova(modelo3) 
+plot(modelo3)
+```
+
+### Boxplot
+
+```{r}
+ggplot(DATA, aes(x = geno, y = twue, colour = riego)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16, outlier.size = 3) +
+  labs(title = "Boxplot por Nivel de Riego y Genotipo", x = "Combinación Riego-Genotipo", y = "Area foliar (cm^2)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Modelos lineal mixtos Var. lfa
+
+```{r}
+library(lme4)
+
+model <- lme4::lmer(lfa ~ riego + geno + riego*geno + (1|bloque), data = DATA)
+
+anova(model)
 ```
